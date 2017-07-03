@@ -11,8 +11,10 @@ h1 {
 	font-family: arial, Franklin, Helvetica, sans-serif;
 	font-style: strong;
 	text-align: center;
+	text-shadow: 0.1em 0.1em gray;
 }
 h2 {
+	font-family: arial, Franklin, Helvetica, sans-serif;
 	position: relative;
 	top: 0;
 	right: 0;
@@ -34,6 +36,7 @@ section {
 	color: white;
 	font-family: courier;
 	float: left;
+	margin: 0.3em;
 }
 
 
