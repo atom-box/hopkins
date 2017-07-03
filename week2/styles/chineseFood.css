@@ -8,28 +8,39 @@ should appear only if the width of the browser is equal to or less than 767px.
 }
 
 h1 {
-	font-family: Arial;
+	font-family: arial, Franklin, Helvetica, sans-serif;
+	font-style: strong;
+	text-align: center;
 }
-
+h2 {
+	position: relative;
+	top: 0;
+	right: 0;
+	float: right;
+	background-color: black;
+	color: #ffff00;
+	text-align: right;
+}
 p { 
 	font-style: italic;
-	font-size: 2em;
-	text-align: center;
+	font-size: 1em;
+	text-align: left;
+	padding: 2em;
 }
 section {
 	width: 30%;
-	height: 100px;
+	min-height: 60%;
 	border: 2px dashed yellow;
 	color: white;
 	font-family: courier;
 	float: left;
 }
 
-/*
+
 html section:nth-child(2) {background-color: #402;}
 html section:nth-child(3) {background-color: #333;}
 html section:nth-child(4) {background-color: #121;}
-*/
+
 
 /*	Definitions:			*/
 /* 	LARGE DEVICE >= 992px  	*/
@@ -37,44 +48,33 @@ html section:nth-child(4) {background-color: #121;}
 /*	MOBILE       <= 767    	*/
 
 /* 	LARGE DEVICE*/
-@media only screen and (min-width: 992px){  
-/************/	
-.col-large-4
-{
-	width: 33%;
-	background-color: blue;
-}
-
-/************/
+@media only screen and (min-width: 992px)
+{  
+	.col-large-4
+	{
+		width: 33%;
+	}
 }
 
 /*	TABLET  	*/
-@media only screen and (min-width: 768px) and 	(max-width: 991px) 	{  
-/************/	
-.col-tablet-6
-{
-	width: 50%;
-	background-color: orange;
-}
-.col-tablet-12
-{
-	width: 100%;
-	background-color: orange;
+@media only screen and (min-width: 768px) and 	(max-width: 991px) 	
+{  
+	.col-tablet-6
+	{
+		width: 50%;
+	}
+	.col-tablet-12
+	{
+			width: 100%;
+	}
 }
 
-/************/
-}
 /*	MOBILE      */
-
-@media only screen and 	(max-width: 767px)  {  
-/************/	
-.col-mobile-12
-{
-	width: 100%;
-	background-color: red;
-}
-
-
-/************/
+@media only screen and 	(max-width: 767px)  
+{  
+	.col-mobile-12
+	{
+		width: 100%;
+	}
 }
 
