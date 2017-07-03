@@ -1,0 +1,4 @@
+fix recursiveness
+fix mega printer outer
+get sensible numbers
+syllable counter?
