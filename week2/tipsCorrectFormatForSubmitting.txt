@@ -1,0 +1,15 @@
+1111111
+https://atom-box.github.io/hopkins/week2/index.html
+https://atom-box.github.io/hopkins/week2/index.html
+2222222
+Found format for submitting at 
+80% down, here:
+https://github.com/jhu-ep-coursera/fullstack-course4/blob/master/FAQ.md#q-where-is-the-launch-automatic-page-generator-button-the-page-looks-different-than-what-is-shown-in-the-video
+33333333
+Sravya Balasa
+I wasn't able to find your link so I copied your HTML and CSS into blank sheets and had to load it myself (would have been mean to fail you obviously). But just put the correct link next time!!
+Jacob Nielsen
+This is a little off.. This project was a little hard at times, and I had to go through the lectures and google things till I felt comfortable too.... 
+All in all though, you are on the right path, and you get most of the ideas, that's for sure... Good work.
+Julie Soforenko
+You've included the link to your Github repo, not your github.io page to view the actually site that's been created. It's been stated first thing in the assignment to *not* include the link to the code, but to the view-able webpage. In this situation it's mandated I need to give all 0s for the assignment.
