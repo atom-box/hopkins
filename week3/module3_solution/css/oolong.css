@@ -1,0 +1,17 @@
+body {
+	font-family: Helvetica, sans-serif;
+	color: black;
+}
+nav{
+	background-color: gold;
+	/* this didn't work.  it's ignored or overridden*/
+}
+
+#top {
+	background-color: gold;
+		/* this didn't work.  it's ignored or overridden*/
+}
+
+#centered {
+	text-align: center;
+}
