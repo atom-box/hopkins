@@ -13,6 +13,10 @@ body {
 	
 }
 
+footer {
+	background-color: red;
+	color: white;
+}
 
 em {
 	background: yellow;

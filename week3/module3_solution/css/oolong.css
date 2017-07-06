@@ -1,15 +1,35 @@
 body {
 	font-family: Helvetica, sans-serif;
-	color: black;
+	color: white;
+	background-color: #400;
 }
-nav{
-	background-color: gold;
-	/* this didn't work.  it's ignored or overridden*/
+#business_name{
+	width: 50%;
+	background-color: grey;
+	font-family: 'Zilla Slab', serif;
 }
 
-#top {
+/*OVERRIDING SOME BOOTSTRAP STYLES HERE*/
+/*It is such a relief to realize I can merely repeat the name of 
+the item I wish to un-default */
+.navbar  {
+	border-radius: 0px;
+	background-color: blue;
+}
+.navbar-default {
+	border-radius: 0px;
+	background-color: yellow;
+	width: 90%;
+	border: 0px; /* Yay!  That border finally disappeared.*/
+}
+header {
+	background-color: blue; 
+}
+/****************************************/
+nav #over {
+	border-radius: 10px;
 	background-color: gold;
-		/* this didn't work.  it's ignored or overridden*/
+	/* this didn't work.  it's ignored or overridden*/
 }
 
 #centered {
