@@ -1,0 +1,55 @@
+div.bar{
+	background-color: pink;
+	border: 3px solid blue;
+
+}
+
+ol {
+	boder: 1px solid black;
+}
+
+div.block {
+	background-color: orange;
+	background-image: url('tennent_36x49.png');
+	background-repeat: no-repeat;
+	height: 37px;
+	width: 50px;
+	border: 3px solid black;
+	float: left;
+}
+
+
+div + p {
+	background-color: orange;
+	padding: 0px 0px 100px  10px;
+}
+
+h1, h2, h3 {
+ font-family: "Zilla Slab", Helvetica;
+}
+
+body {
+	border: 2px solid yellow;
+}
+
+header  {
+	background-color: pink;
+	font-size: 3em;
+
+}
+
+
+header > div  {
+
+	background-image: url('tennent_36x49.png') ;
+	background-repeat: no-repeat;
+	height: 300px;
+	width: 100px;
+	float: left;
+	background-color: gray;
+}
+
+div + p.foo {
+	clear: both;
+	background-color: red;
+}
