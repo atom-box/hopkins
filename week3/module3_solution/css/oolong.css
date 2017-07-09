@@ -1,3 +1,57 @@
+section.container {
+	min-height: 999px;
+	background-color: #222;
+	border: clear solid 6px;
+	border-radius: 0px;
+}
+
+
+section.container article  {
+	background-image: url("/home/atom_box/Dropbox/code/coursera_jhu/homework/week3/module3_solution/images/rice2.png");
+	background-repeat: repeat;
+	border-radius: 10px;
+
+
+}
+
+div.container-fluid div.navbar-header button + a,
+
+{
+	font-family: "Zilla Slab", monospace;
+}
+
+
+section.container > p, 
+section.container > article > h2 {
+	font-family: 'Zilla Slab', Arial, sans-serif;
+
+}
+
+button + a.navbar-brand  {
+	font-weight: bold;
+	font-size: 3em;
+}
+section > p {   /*  Our Menu BUT the line has SECTION*/
+	font-size: 2em;
+	font-weight: bold;
+}
+
+section.container article {
+
+}
+
+section article {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+
+ul li a {
+	background-color: black;
+	border: 2px solid red;
+	color: yellow; /*all works except for font color*/
+	background-repeat: repeat;
+
+}
 
 .one.two {
 	background-color: yellow;
@@ -7,7 +61,8 @@
 body {
 	font-family: Helvetica, sans-serif;
 	color: white;
-	background-color: #400;
+	background-color: #600;
+
 }
 #business_name{
 	background-color: #999999;
@@ -21,29 +76,14 @@ body {
 the item I wish to un-default */
 a.navbar  {
 	border-radius: 0px;
-	background-color: blue;
-	color: white;
+	background-color: green;
+
 }
 .navbar-default {
 	border-radius: 0px;
-	background-color: navy;
+	background-color: #222;
 	border: 0px; /* Yay!  That border finally disappeared.*/
 .navbar-brand {
 	color: white;
 }
-}
-/*header {
-	background-color: blue; 
-}
-nav #over {
-	border-radius: 10px;
-	background-color: gold;
-}
-
-#centered {
-	text-align: center;
-}
-*/
-.reviled {
-	background-color: #004444;
 }
