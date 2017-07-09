@@ -7,7 +7,7 @@ section.container {
 
 
 section.container article  {
-	background-image: url("/home/atom_box/Dropbox/code/coursera_jhu/homework/week3/module3_solution/images/rice2.png");
+	background-image: url("../images/rice2.png");
 	background-repeat: repeat;
 	border-radius: 10px;
 
