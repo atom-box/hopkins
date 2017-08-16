@@ -114,21 +114,14 @@ $ajaxUtils.sendGetRequest(
 // ooooooooooooooooooooooooooooooooooooooo EVAN
 
 
-// REBUILDS HTML TO SHOW THE SPECIALS for the home page based on categories array
+// Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
 
   // Load home snippet page
-  console.log('Hop...');
   $ajaxUtils.sendGetRequest(
-    homeHtmlUrl,    // also known as HOME-SNIPPET
+    homeHtmlUrl,
     function (homeHtml) {
-      //EV MAIN IS NEXT 4 LINES 4PM AT CARGO COFFEE AUG 16
-
-      // chooseRandomCategory(categories) <--note, takes just one argument
-      var chosenRandomCategory = chooseRandomCategory( categories);
-      console.log('Line 128 created ' + chosenRandomCategory + ' from ' + categories );
-      console.log('...skip...');
 
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
@@ -159,7 +152,6 @@ function buildAndShowHomeHTML (categories) {
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
 
-  console.log('...and jump');
 
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
@@ -261,7 +253,7 @@ function buildAndShowMenuItemsHTML (categoryMenuItems) {
         function (menuItemHtml) {
           // Switch CSS class active to menu button
           switchMenuToActive();
-          // evan TODO below here is where to tell curry vs soup, yes?
+
           var menuItemsViewHtml =
             buildMenuItemsViewHtml(categoryMenuItems,
                                    menuItemsTitleHtml,
@@ -274,8 +266,6 @@ function buildAndShowMenuItemsHTML (categoryMenuItems) {
 }
 
 
-//  EVAN  THIS IS WHERE CURRY ITEMS 1 THROUGH 7 GET MADE. 
-//  ?? TODO: FIND WHERE DOES CATEGORY FEED IN?
 // Using category and menu items data and snippets html
 // build menu items view HTML to be inserted into page
 function buildMenuItemsViewHtml(categoryMenuItems,
@@ -296,13 +286,12 @@ function buildMenuItemsViewHtml(categoryMenuItems,
 
   // Loop over menu items
   var menuItems = categoryMenuItems.menu_items;
-  console.log("Third try, in line 290, menuItems is " + menuItems[1].name);
   var catShortName = categoryMenuItems.category.short_name;
   for (var i = 0; i < menuItems.length; i++) {
     // Insert menu item values
     var html = menuItemHtml;
     html =
-      insertProperty(html, "short_name", menuItems[i].name);
+      insertProperty(html, "short_name", menuItems[i].short_name);
     html =
       insertProperty(html,
                      "catShortName",

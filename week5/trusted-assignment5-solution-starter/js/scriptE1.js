@@ -1,9 +1,8 @@
-/*  PRISTINE.   DOWNLOADED AUG 16 */
-/* for homework 5 */
-
-console.log("August 16, 2017.");
-
 $(function () { // Same as document.addEventListener("DOMContentLoaded"...
+
+//                HEAVILY COMMENTED BY EVAN      ///////////////////////
+
+// oops - see copious notes in ex61 script.js
 
   // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
   $("#navbarToggle").blur(function (event) {
@@ -17,6 +16,9 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 (function (global) {
 
 var dc = {};
+
+// EVAN SHIT
+var homeHtml = "snippets/home-snippet.html";
 
 var homeHtmlUrl = "snippets/home-snippet.html";
 var allCategoriesUrl =
@@ -85,50 +87,37 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 // *** start ***
 // On first load, show home view
-//EVREMOVED  showLoading("#main-content");
-//EVREMOVED $ajaxUtils.sendGetRequest(
-//EVREMOVED   allCategoriesUrl,
-//EVREMOVED   [...], // ***** <---- TODO: STEP 1: Substitute [...] ******
-//EVREMOVED   true); // Explicitely setting the flag to get JSON from server processed into an object literal
-//EVREMOVED });
-// *** finish **
-
-// ooooooooooooooooooooooooooooooooooooooo EVAN
-
-
-// On first load, show home view
 showLoading("#main-content");
+
+//  stole 1 start
 $ajaxUtils.sendGetRequest(
-  homeHtmlUrl,
+  homeHtml,
   function (responseText) {
     document.querySelector("#main-content")
       .innerHTML = responseText;
   },
   false);
 });
+//   stole 1 end
+
+/* his 2 start
+$ajaxUtils.sendGetRequest(
+  allCategoriesUrl,
+  [...], // ***** <---- TODO: STEP 1: Substitute [...] ******
+  true); // Explicitely setting the flag to get JSON from server processed into an object literal
+});
+his 2 end   */
+// *** finish **
 
 
-
-
-
-// ooooooooooooooooooooooooooooooooooooooo EVAN
-
-
-// REBUILDS HTML TO SHOW THE SPECIALS for the home page based on categories array
+// Builds HTML for the home page based on categories array
 // returned from the server.
 function buildAndShowHomeHTML (categories) {
 
   // Load home snippet page
-  console.log('Hop...');
   $ajaxUtils.sendGetRequest(
-    homeHtmlUrl,    // also known as HOME-SNIPPET
+    homeHtmlUrl,
     function (homeHtml) {
-      //EV MAIN IS NEXT 4 LINES 4PM AT CARGO COFFEE AUG 16
-
-      // chooseRandomCategory(categories) <--note, takes just one argument
-      var chosenRandomCategory = chooseRandomCategory( categories);
-      console.log('Line 128 created ' + chosenRandomCategory + ' from ' + categories );
-      console.log('...skip...');
 
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
@@ -159,7 +148,6 @@ function buildAndShowHomeHTML (categories) {
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
 
-  console.log('...and jump');
 
 // Given array of category objects, returns a random category object.
 function chooseRandomCategory (categories) {
@@ -173,12 +161,10 @@ function chooseRandomCategory (categories) {
 
 // Load the menu categories view
 dc.loadMenuCategories = function () {
-  console.log("Line 166 worked!");
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
     allCategoriesUrl,
     buildAndShowCategoriesHTML);
-  alert("foo");
 };
 
 
@@ -195,11 +181,16 @@ dc.loadMenuItems = function (categoryShort) {
 // Builds HTML for the categories page based on the data
 // from the server
 function buildAndShowCategoriesHTML (categories) {
+  /* EV SAYS this CATEGORIES comes back as a JSON object*/
   // Load title snippet of categories page
   $ajaxUtils.sendGetRequest(
     categoriesTitleHtml,
     function (categoriesTitleHtml) {
       // Retrieve single category snippet
+      //EV might be nested.  Can grab first item and then
+      // go back to grab more, inside the nest.
+      // Like grabbing a chapter title, & grabbing the 
+      // paragraphs. 
       $ajaxUtils.sendGetRequest(
         categoryHtml,
         function (categoryHtml) {
@@ -252,6 +243,8 @@ function buildCategoriesViewHtml(categories,
 // from the server
 function buildAndShowMenuItemsHTML (categoryMenuItems) {
   // Load title snippet of menu items page
+  // EV- by end of page, got all: 3 ORANGE WORDS HERE
+  // EV- notice all 3 orangiesin #255
   $ajaxUtils.sendGetRequest(
     menuItemsTitleHtml,
     function (menuItemsTitleHtml) {
@@ -261,12 +254,13 @@ function buildAndShowMenuItemsHTML (categoryMenuItems) {
         function (menuItemHtml) {
           // Switch CSS class active to menu button
           switchMenuToActive();
-          // evan TODO below here is where to tell curry vs soup, yes?
+
           var menuItemsViewHtml =
             buildMenuItemsViewHtml(categoryMenuItems,
                                    menuItemsTitleHtml,
                                    menuItemHtml);
           insertHtml("#main-content", menuItemsViewHtml);
+          // EV- now just stick #255 INTO YOUR WEB PAGE at m.c.#
         },
         false);
     },
@@ -274,8 +268,6 @@ function buildAndShowMenuItemsHTML (categoryMenuItems) {
 }
 
 
-//  EVAN  THIS IS WHERE CURRY ITEMS 1 THROUGH 7 GET MADE. 
-//  ?? TODO: FIND WHERE DOES CATEGORY FEED IN?
 // Using category and menu items data and snippets html
 // build menu items view HTML to be inserted into page
 function buildMenuItemsViewHtml(categoryMenuItems,
@@ -296,13 +288,12 @@ function buildMenuItemsViewHtml(categoryMenuItems,
 
   // Loop over menu items
   var menuItems = categoryMenuItems.menu_items;
-  console.log("Third try, in line 290, menuItems is " + menuItems[1].name);
   var catShortName = categoryMenuItems.category.short_name;
   for (var i = 0; i < menuItems.length; i++) {
     // Insert menu item values
     var html = menuItemHtml;
     html =
-      insertProperty(html, "short_name", menuItems[i].name);
+      insertProperty(html, "short_name", menuItems[i].short_name);
     html =
       insertProperty(html,
                      "catShortName",
