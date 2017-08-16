@@ -1,5 +1,9 @@
 $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
+//                HEAVILY COMMENTED BY EVAN      ///////////////////////
+
+// oops - see copious notes in ex61 script.js
+
   // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
   $("#navbarToggle").blur(function (event) {
     var screenWidth = window.innerWidth;
@@ -177,11 +181,16 @@ dc.loadMenuItems = function (categoryShort) {
 // Builds HTML for the categories page based on the data
 // from the server
 function buildAndShowCategoriesHTML (categories) {
+  /* EV SAYS this CATEGORIES comes back as a JSON object*/
   // Load title snippet of categories page
   $ajaxUtils.sendGetRequest(
     categoriesTitleHtml,
     function (categoriesTitleHtml) {
       // Retrieve single category snippet
+      //EV might be nested.  Can grab first item and then
+      // go back to grab more, inside the nest.
+      // Like grabbing a chapter title, & grabbing the 
+      // paragraphs. 
       $ajaxUtils.sendGetRequest(
         categoryHtml,
         function (categoryHtml) {
@@ -234,6 +243,8 @@ function buildCategoriesViewHtml(categories,
 // from the server
 function buildAndShowMenuItemsHTML (categoryMenuItems) {
   // Load title snippet of menu items page
+  // EV- by end of page, got all: 3 ORANGE WORDS HERE
+  // EV- notice all 3 orangiesin #255
   $ajaxUtils.sendGetRequest(
     menuItemsTitleHtml,
     function (menuItemsTitleHtml) {
@@ -249,6 +260,7 @@ function buildAndShowMenuItemsHTML (categoryMenuItems) {
                                    menuItemsTitleHtml,
                                    menuItemHtml);
           insertHtml("#main-content", menuItemsViewHtml);
+          // EV- now just stick #255 INTO YOUR WEB PAGE at m.c.#
         },
         false);
     },
