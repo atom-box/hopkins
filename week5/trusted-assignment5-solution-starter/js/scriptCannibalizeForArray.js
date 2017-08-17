@@ -1,4 +1,5 @@
-/*  PRISTINE.   DOWNLOADED AUG 16 */
+/*  Evan Genest twitter@mistergenest   */
+/*  August 17, 2017   */
 /* for homework 5 */
 
 console.log("August 16, 2017.");
@@ -152,8 +153,30 @@ function buildAndShowHomeHTML (categories) {
     false); // False here because we are getting just regular HTML from the server, so no need to process JSON.
 }
 
+///  Ev's 
+//dc.loadRandomItems = function (categoryShort) {
 
 
+  /*showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    menuItemsUrl + categoryShort,
+    buildAndShowMenuItemsHTML);
+    */
+//  };
+
+// Given array of category objects, returns a random category object.
+function chooseRandomCategory () {
+  var cats = ['L', 'A',  'B',  'SP', 'C', 'F', 'V', 'DK', 'VG', 'CU', 'NL', 'NF', 'PF', 'FR', 'CM', 'FY', 'SO', 'DS', 'D', 'SR'];
+  alert ('Koi: ' + cats[1] + ' People: 0' );
+  // Choose a random index into the array (from 0 inclusively until array length (exclusively))
+  var randomArrayIndex = Math.floor(Math.random() * cats.length);
+
+  // return category object with that randomArrayIndex
+  //return cats[randomArrayIndex];
+  return 'B';
+}
+
+dc.loadRandomItems()
 
 // Load the menu categories view
 dc.loadMenuCategories = function () {
@@ -162,31 +185,19 @@ dc.loadMenuCategories = function () {
   $ajaxUtils.sendGetRequest(
     allCategoriesUrl,
     buildAndShowCategoriesHTML);
+  alert("foo");
 };
-
-function hippy() {
-  var cats = ['L', 'A',  'B',  'SP', 'C', 'F', 'V', 'DK', 'VG', 'CU', 'NL', 'NF', 'PF', 'FR', 'CM', 'FY', 'SO', 'DS', 'D', 'SR'];
-  var ranNum = Math.floor(Math.random() * cats.length);
-  return cats[ranNum];
-} 
-
 
 
 // Load the menu items view
 // 'categoryShort' is a short_name for a category
-dc.loadMenuItemsRandy = function ( categoryShort ) {
-  showLoading("#main-content");
-  categoryShort = hippy();
-  $ajaxUtils.sendGetRequest(
-    menuItemsUrl + categoryShort,
-    buildAndShowMenuItemsHTML);
-};
 dc.loadMenuItems = function (categoryShort) {
   showLoading("#main-content");
   $ajaxUtils.sendGetRequest(
     menuItemsUrl + categoryShort,
     buildAndShowMenuItemsHTML);
 };
+
 
 
 // Builds HTML for the categories page based on the data
